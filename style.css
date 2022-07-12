@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--primary-color: #13151d;
+	--secondary-color: #03254e;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--primary-color);
+	font-family: 'Poppins', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: var(--secondary-color);
+	padding: 1em;
+}
+.search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search-bar {
+	background-color: transparent;
+	border: 2px solid #fff;
+	border-radius: 50px;
+	font-family: inherit;
+	font-size: 1rem;
+	padding: 0.5em 1em;
+	color: #fff;
+}
+
+.search-bar::placeholder {
+	color: #fff;
+}
+
+.search-bar:focus {
+	outline: none;
+	background-color: var(--primary-color);
+}
+button {
+	margin: 0.5rem;
+	border: none;
+	width: 2.75rem;
+	height: 2.75rem;
+	outline: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+button > svg {
+	stroke: #fff;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 18rem);
+	column-gap: 2rem;
+	row-gap: 4rem;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem 0;
+}
+.movie {
+	width: 18.75rem;
+	height: 35rem;
+	background-color: var(--secondary-color);
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	position: relative;
+	overflow: hidden;
+}
+
+.movie img {
+	width: 100%;
+}
+
+.movie-info {
+	color: #eee;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5em 1em 1em;
+	letter-spacing: 0.5px;
+}
+.movie-info h3 {
+	font-weight: 500;
+}
+.movie-info span {
+	background-color: var(--primary-color);
+	padding: 0.25rem 0.5rem;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.movie-info span.green {
+	color: #12b886;
+}
+.movie-info span.orange {
+	color: #ffa500;
+}
+.movie-info span.red {
+	color: #ff0000;
+}
+
+.overview {
+	background-color: var(--secondary-color);
+	color: #eee;
+	padding: 1em;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	max-width: 100%;
+	transform: translateY(101%);
+	transition: transform 0.3s ease-in;
+}
+.overview h3 {
+	font-weight: 500;
+	margin-bottom: 1rem;
+}
+.overview p {
+	font-size: 0.9rem;
+}
+
+.movie:hover .overview {
+	transform: translateY(0);
+}
