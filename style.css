@@ -135,3 +135,11 @@ main {
 .movie:hover .overview {
 	transform: translateY(0);
 }
+
+@media screen and (max-width: 34em) {
+	header {
+		justify-content: center;
+		align-items: center;
+		padding: 1em 0em;
+	}
+}
