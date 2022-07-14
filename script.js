@@ -3,6 +3,7 @@
 const input = document.querySelector('.search-bar');
 const button = document.querySelector('button');
 const main = document.querySelector('main');
+const form = document.querySelector("form")
 
 const api_url =
 	'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d91d78dbd774dca10ce8d3375b3c0cf9&page=1';
@@ -68,9 +69,7 @@ const getClassByRate = (vote) => {
 
 getMovie(api_url);
 
-button.addEventListener('click', searchMovie);
-input.addEventListener('keyup', (e) => {
-	if (e.key === 'Enter') {
-		searchMovie();
-	}
-});
+form.addEventListener('submit',(e) =>{
+	e.preventDefault()
+	searchMovie()
+})
